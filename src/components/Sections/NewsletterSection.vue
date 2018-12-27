@@ -4,7 +4,6 @@
       <h2 class="title-default">Never miss an episode</h2>
       <p class="section-description">Form with MailChimp ready, just change the action! Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />  Vel modi rem laudantium, alias minus temporibus nihil reiciendis vero.</p>
 
-
       <form action="//myaccount.us10.list-manage.com/subscribe/post?u=599a4d2b746f06b367c5f8085&amp;id=f429f2b2f5" method="POST" target="_blank" class="form-newsletter validate">
         <fieldset class="row">
           <div class="col-md-9 nopadding">

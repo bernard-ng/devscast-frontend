@@ -10,7 +10,7 @@
 export default {
   name: 'PodcastPlayer',
   props: {
-    audioSrc : {String, required: true}
+    audioSrc: { String, required: true }
   }
 }
 </script>

@@ -73,14 +73,14 @@ export default {
         { name: '@mahid_hm', link: 'https://git.com', amout: '50' }
       ],
       socials: [
-        { link: 'https://facebook.com/id', icon: 'fa fa-facebook' },
-        { link: 'https://facebook.com/id', icon: 'fa fa-instagram' },
-        { link: 'https://facebook.com/id', icon: 'fa fa-google-plus' },
-        { link: 'https://facebook.com/id', icon: 'fa fa-soundcloud' },
-        { link: 'https://facebook.com/id', icon: 'fa fa-pinterest' },
-        { link: 'https://facebook.com/id', icon: 'fa fa-youtube' },
-        { link: 'https://facebook.com/id', icon: 'fa fa-spotify' },
-        { link: 'https://facebook.com/id', icon: 'fa fa-twitter' }
+        { link: 'https://facebook.com/idd', icon: 'fa fa-facebook' },
+        { link: 'https://facebook.com/iddd', icon: 'fa fa-instagram' },
+        { link: 'https://facebook.com/ide', icon: 'fa fa-google-plus' },
+        { link: 'https://facebook.com/id4', icon: 'fa fa-soundcloud' },
+        { link: 'https://facebook.com/id44', icon: 'fa fa-pinterest' },
+        { link: 'https://facebook.com/idsdf', icon: 'fa fa-youtube' },
+        { link: 'https://facebook.com/idfd', icon: 'fa fa-spotify' },
+        { link: 'https://facebook.com/iddf', icon: 'fa fa-twitter' }
       ]
     }
   }

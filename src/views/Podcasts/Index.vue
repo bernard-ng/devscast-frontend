@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import PodcastCard from '@/components/Podcasts/PodcastCard.vue';
-import DonateSection from '@/components/Sections/DonateSection.vue';
+import PodcastCard from '@/components/Podcasts/PodcastCard.vue'
+import DonateSection from '@/components/Sections/DonateSection.vue'
 
 export default {
 
@@ -42,20 +42,20 @@ export default {
     }
   },
   computed: {
-      lastPodcast () {
-        return (typeof this.podcasts[0] === 'undefined') ? {} : this.podcasts[0]
-      },
+    lastPodcast () {
+      return (typeof this.podcasts[0] === 'undefined') ? {} : this.podcasts[0]
+    },
 
-      lastId () {
-        return this.podcasts[this.podcasts.length - 1].id
-      }
+    lastId () {
+      return this.podcasts[this.podcasts.length - 1].id
+    }
   },
   components: {
     PodcastCard,
     DonateSection
   },
   mounted () {
-    this.$http.get('http://localhost:8081').then(r => {
+    this.$http.get('http://localhost:8081/podcasts').then(r => {
       this.podcasts = r.data.podcasts
       this.message = r.data.message
     })
