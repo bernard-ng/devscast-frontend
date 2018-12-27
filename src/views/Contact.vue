@@ -56,7 +56,7 @@
 
 			<!-- ===== MAP EMBED ===== -->
 			<div class="map" id="map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6508936.152256409!2d-123.7672035544811!3d37.195681156014146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C+USA!5e0!3m2!1spt-BR!2sbr!4v1459617847784" style="border:0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15630.679180929914!2d27.4688104!3d-11.6468624!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x51540f372bd869d6!2sNgpictures!5e0!3m2!1sfr!2scd!4v1545836979670" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
 
 			<!-- ===== DONATE ===== -->

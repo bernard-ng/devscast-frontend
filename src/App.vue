@@ -1,13 +1,9 @@
 <template>
   <div id="app">
     <Header></Header>
-
-    <div v-if="name !== 'about' & name !== 'contact'">
-      <PodcastHero :podcast="podcast"></PodcastHero>
-    </div>
-
+    <PodcastHero v-if="podcast" :podcast="podcast"></PodcastHero>
     <main id="main" class="main">
-      <transition name="fade">
+      <transition name="slide">
         <router-view/>
       </transition>
     </main>
@@ -19,25 +15,23 @@
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import PodcastHero from '@/components/Podcasts/PodcastHero.vue'
-import PageHeader from '@/components/PageHeader.vue'
-import vuex from 'vuex'
 
 export default {
   data () {
     return {
-      name: 'Devcasts',
-      podcast: {}
+      action: '',
+      podcast: null
     }
   },
   components: {
     Header,
     Footer,
     PodcastHero,
-    PageHeader
   },
-  mounted () {
-    this.$http.get('http://localhost:8081').then(r => {
-      this.podcast = r.data.podcasts[0]
+  created () {
+    this.$http.get('http://localhost:8081/podcasts/last').then(r => {
+      this.podcast = r.data.podcast
+      this.action = r.data['api.action']
     })
   }
 }

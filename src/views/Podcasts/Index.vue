@@ -29,15 +29,18 @@
 </template>
 
 <script>
-import PodcastCard from '@/components/Podcasts/PodcastCard.vue';
-import DonateSection from '@/components/Sections/DonateSection.vue';
+import PodcastCard from '@/components/Podcasts/PodcastCard.vue'
+import PodcastPagination from '@/components/Podcasts/PodcastPagination'
+import DonateSection from '@/components/Sections/DonateSection.vue'
 
 export default {
 
   name: 'podcast.index',
   data () {
     return {
-      message: '',
+      action: '',
+      lastPodcast: '',
+      lastId: '',
       podcasts: []
     }
   },
@@ -52,12 +55,13 @@ export default {
   },
   components: {
     PodcastCard,
-    DonateSection
+    DonateSection,
+    PodcastPagination
   },
   mounted () {
-    this.$http.get('http://localhost:8081').then(r => {
+    this.$http.get('http://localhost:8081/podcasts').then(r => {
       this.podcasts = r.data.podcasts
-      this.message = r.data.message
+      this.action = r.data['api.action']
     })
   }
 }
