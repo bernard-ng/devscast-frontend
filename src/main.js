@@ -6,6 +6,13 @@ import VueResource from 'vue-resource'
 import VueTruncateFilter from 'vue-truncate-filter'
 import './registerServiceWorker'
 
+// Design and Syte
+import './assets/css/bootstrap.min.css'
+import './assets/css/magnific-popup.css'
+import './assets/css/mediaelementplayer.min.css'
+import './assets/css/style.css'
+
+// Vue config and Plugin addition
 Vue.config.productionTip = false
 Vue.use(VueResource)
 Vue.use(VueTruncateFilter)

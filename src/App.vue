@@ -1,11 +1,15 @@
 <template>
   <div id="app">
     <Header></Header>
+<<<<<<< HEAD
 
     <PodcastHero :podcast="podcast"></PodcastHero>
 
+=======
+    <PodcastHero v-if="podcast" :podcast="podcast"></PodcastHero>
+>>>>>>> master
     <main id="main" class="main">
-      <transition name="fade">
+      <transition name="slide">
         <router-view/>
       </transition>
     </main>
@@ -17,12 +21,11 @@
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import PodcastHero from '@/components/Podcasts/PodcastHero.vue'
-import PageHeader from '@/components/PageHeader.vue'
 
 export default {
   data () {
     return {
-      name: 'Devcasts',
+      action: null,
       podcast: null
     }
   },
@@ -38,6 +41,7 @@ export default {
     getLastPodcast () {
       this.$http.get('http://localhost:8081/podcasts/last').then(r => {
         this.podcast = r.data.podcast
+        this.action = r.data['api.action']
       })
     }
   }
