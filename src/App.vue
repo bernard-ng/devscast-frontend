@@ -1,13 +1,9 @@
 <template>
   <div id="app">
     <Header></Header>
-<<<<<<< HEAD
 
-    <PodcastHero :podcast="podcast"></PodcastHero>
-
-=======
     <PodcastHero v-if="podcast" :podcast="podcast"></PodcastHero>
->>>>>>> master
+
     <main id="main" class="main">
       <transition name="slide">
         <router-view/>
