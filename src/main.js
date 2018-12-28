@@ -17,6 +17,9 @@ Vue.config.productionTip = false
 Vue.use(VueResource)
 Vue.use(VueTruncateFilter)
 
+// VueResource config
+Vue.http.options.root = "http://localhost:8081"
+
 new Vue({
   router,
   store,
