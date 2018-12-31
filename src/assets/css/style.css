@@ -63,12 +63,7 @@
 
 /* ========================= */
 
-.label {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-	color: #fff;
-}
+
 
 /* ========================= */
 
@@ -76,36 +71,6 @@
 
 /* ========================= */
 
-.label-default {
-	color: #110f16;
-	background: #ecf0f1;
-	border: #ecf0f1;
-}
-
-.label-info {
-	background: #3498db;
-	border: #3498db;
-}
-
-.label-danger {
-	background: #e74c3c;
-	border: #e74c3c;
-}
-
-.label-warning {
-	background: #f39c12;
-	border: #f39c12;
-}
-
-.label-success {
-	background: #2ecc71;
-	border: #2ecc71;
-}
-
-.label-primary {
-	background: #18151f;
-	border: #18151f;
-}
 
 /* ========================= */
 
