@@ -7,10 +7,7 @@ import VueTruncateFilter from 'vue-truncate-filter'
 import './registerServiceWorker'
 
 // Design and Syte
-import './assets/css/bootstrap.min.css'
-import './assets/css/magnific-popup.css'
-import './assets/css/mediaelementplayer.min.css'
-import './assets/css/style.css'
+import './assets/sass/main.scss'
 
 // Vue config and Plugin addition
 Vue.config.productionTip = false
@@ -18,7 +15,7 @@ Vue.use(VueResource)
 Vue.use(VueTruncateFilter)
 
 // VueResource config
-Vue.http.options.root = "http://localhost:8081"
+Vue.http.options.root = 'http://localhost:8081'
 
 new Vue({
   router,
