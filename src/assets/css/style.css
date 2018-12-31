@@ -78,11 +78,6 @@
 
 /* ========================= */
 
-.section-negative {
-	position: relative;
-	background: #110f16;
-	color: #f1f1f1;
-}
 
 /* ========================= */
 
@@ -90,11 +85,7 @@
 
 /* ========================= */
 
-.section-negative {
-	position: relative;
-	background: #f1f1f1;
-	color: #110f16;
-}
+
 
 /* ========================= */
 
@@ -102,11 +93,7 @@
 
 /* ========================= */
 
-.section-highlight {
-	position: relative;
-	background: #2ecc71;
-	color: #fff;
-}
+
 
 /* ========================= */
 
@@ -114,10 +101,6 @@
 
 /* ========================= */
 
-.section-description {
-	position: relative;
-	margin-bottom: 50px;
-}
 
 /* ========================= */
 
@@ -125,10 +108,7 @@
 
 /* ========================= */
 
-.nopadding {
-	padding: 0 !important;
-	margin: 0 !important;
-}
+
 
 /* ========================= */
 
