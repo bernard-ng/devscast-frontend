@@ -25,27 +25,7 @@
 
 /* ========================= */
 
-.inline-block {
-	display: -moz-inline-stack;
-	display: inline-block;
-	vertical-align: middle;
-	zoom: 1;
-	*display: inline;
-}
 
-.clear {
-	*zoom: 1;
-}
-
-.clear:before,
-.clear:after {
-	content: "";
-	display: table;
-}
-
-.clear:after {
-	clear: both;
-}
 
 /* ASSETS */
 
