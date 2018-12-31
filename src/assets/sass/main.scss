@@ -1,9 +1,9 @@
 // Import of vendor scss files
-@import "vendor/bootstrap.min.scss";
-@import "vendor/magnific-popup.scss";
-@import "vendor/mediaelementplayer.min.scss";
+@import "./vendor/bootstrap.min.scss";
+@import "./vendor/magnific-popup.scss";
+@import "./vendor/mediaelementplayer.min.scss";
 
 
 //Import of application scss files
-@import "base/_base.scss";
-@import "components/_components.scss";
+@import "./base/base";
+@import "./components/components";
