@@ -13,13 +13,12 @@
 .clear {
   *zoom: 1;
 
-  &:before {
+  &:before, &:after {
     content: "";
     display: table;
   }
 
   &:after {
-    @extend .clear::before;
     clear: both;
   }
 }
