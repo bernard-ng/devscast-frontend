@@ -2,7 +2,7 @@
 
 @import "_variables.scss";
 
-// Bootstrap btn size override
+// Bootstrap size override
 .btn,
 .btn-lg,
 .btnl-sm,
@@ -25,14 +25,22 @@
 	font-size: 1.4rem;
 }
 
-// Bootstrap custom btn
+.label {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	color: #fff;
+}
+
+
+// Bootstrap Custom
 .btn-round {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 }
 
-// Bootstrap Btn color override
+// Bootstrap Color Override
 .btn {
   &-default {
     color: #110f16;
@@ -96,3 +104,35 @@
   }
 }
 
+.label {
+  &-default {
+    color: #110f16;
+    background: #ecf0f1;
+    border: #ecf0f1;
+  }
+  
+  &-info {
+    background: #3498db;
+    border: #3498db;
+  }
+  
+  &-danger {
+    background: #e74c3c;
+    border: #e74c3c;
+  }
+  
+  &-warning {
+    background: #f39c12;
+    border: #f39c12;
+  }
+  
+  &-success {
+    background: #2ecc71;
+    border: #2ecc71;
+  }
+  
+  &-primary {
+    background: #18151f;
+    border: #18151f;
+  }
+}
