@@ -123,37 +123,7 @@
 
 /* ========================= */
 
-.tag-list {
-	*zoom: 1;
-}
 
-.tag-list:before,
-.tag-list:after {
-	content: "";
-	display: table;
-}
-
-.tag-list:after {
-	clear: both;
-}
-
-.tag-list .tag-item {
-	float: left;
-	margin: 0 5px 5px 0;
-	list-style: none;
-}
-
-.tag-list a {
-	display: block;
-	padding: 5px 8px;
-	background: #2ecc71;
-	color: #f1f1f1;
-}
-
-.tag-list a:hover,
-.tag-list a:focus {
-	background: #28b363;
-}
 
 /* ========================= */
 
