@@ -98,3 +98,25 @@
     }
   }
 }
+
+
+.podcast-player {
+  background: #110f16;
+
+  & .podcast-player-inner {
+    padding: 40px 0;
+  }
+
+  & iframe[src*="soundcloud"] {
+    width: 100%;
+    height: 100px;
+    background: #e5e5e5;
+  }
+
+  & .video-frame {
+    width: 800px;
+    height: 450px;
+    display: block;
+    margin: 0 auto;
+  }
+} 
