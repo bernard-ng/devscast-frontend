@@ -1,0 +1,23 @@
+@import "variables";
+
+.inline-block {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  *display: inline;
+}
+
+.clear {
+  *zoom: 1;
+
+  &:before {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    @extend .clear::before;
+    clear: both;
+  }
+}
