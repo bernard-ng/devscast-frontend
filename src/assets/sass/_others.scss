@@ -9,24 +9,23 @@
 	font-weight: 700;
 	font-size: 20px;
 	font-size: 2rem;
+
+	& .darker {
+		background: #cdcdcd;
+	}
 }
 
-.block-example-nopadding.darker {
-	background: #cdcdcd;
-}
-
-
-.table > tbody > tr > td,
-.table > tbody > tr > th,
-.table > tfoot > tr > td,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > thead > tr > th {
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
 	padding: 12px;
 }
 
-.table-bordered > thead > tr > td,
-.table-bordered > thead > tr > th {
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
 	border-bottom-width: 1px;
 }
 
@@ -38,7 +37,7 @@
 	border-top: none;
 }
 
-.nav-tabs > li > a {
+.nav-tabs>li>a {
 	color: #777;
 }
 
@@ -46,10 +45,10 @@
 	background: #fff;
 	border: 1px solid #dddddd;
 	border-top: none;
-}
 
-.toggle-panel .toggle-panel-inner {
-	padding: 15px;
+	& .toggle-panel-inner {
+		padding: 15px;
+	}
 }
 
 
