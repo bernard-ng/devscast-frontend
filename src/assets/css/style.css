@@ -35,27 +35,6 @@
 
 /* ========================= */
 
-.btn,
-.btn-lg,
-.btnl-sm,
-.btn-xs {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-	color: #fff;
-	text-transform: uppercase;
-	-webkit-transition: all 0.15s ease-out;
-	-moz-transition: all 0.15s ease-out;
-	-o-transition: all 0.15s ease-out;
-	transition: all 0.15s ease-out;
-	font-weight: 700;
-}
-
-.btn-lg {
-	padding: 11.5px 16px;
-	font-size: 14px;
-	font-size: 1.4rem;
-}
 
 /* ========================= */
 
@@ -63,85 +42,12 @@
 
 /* ========================= */
 
-.btn-round {
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
 
 /* ========================= */
 
 /*     BOOTSTRAP COLORS   	 */
 
 /* ========================= */
-
-.btn-default {
-	color: #110f16;
-	background: #ecf0f1;
-	border: #ecf0f1;
-}
-
-.btn-default:hover,
-.btn-default:focus {
-	background: #dde4e6;
-	border: #dde4e6;
-}
-
-.btn-info {
-	background: #3498db;
-	border: #3498db;
-}
-
-.btn-info:hover,
-.btn-info:focus {
-	background: #258cd1;
-	border: #258cd1;
-}
-
-.btn-danger {
-	background: #e74c3c;
-	border: #e74c3c;
-}
-
-.btn-danger:hover,
-.btn-danger:focus {
-	background: #e43725;
-	border: #e43725;
-}
-
-.btn-warning {
-	background: #f39c12;
-	border: #f39c12;
-}
-
-.btn-warning:hover,
-.btn-warning:focus {
-	background: #e08e0b;
-	border: #e08e0b;
-}
-
-.btn-success {
-	background: #2ecc71;
-	border: #2ecc71;
-}
-
-.btn-success:hover,
-.btn-success:focus {
-	background: #29b765;
-	border: #29b765;
-}
-
-.btn-primary {
-	background: #18151f;
-	border: #18151f;
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary.active {
-	background: #050507 !important;
-	border: #050507;
-}
 
 /* ========================= */
 
