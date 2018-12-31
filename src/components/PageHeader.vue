@@ -22,8 +22,8 @@
 export default {
   name: 'PageHeader',
   props: {
-    name: {String, required: true},
-    routeName: {String, required: true}
+    name: { String, required: true },
+    routeName: { String, required: true }
   }
 }
 </script>

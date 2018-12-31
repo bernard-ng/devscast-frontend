@@ -38,8 +38,8 @@
 export default {
   name: 'PodcastCard',
   props: {
-    podcast: {Object, required: true},
-    type: {String, default: 'boxed'}
+    podcast: { Object, required: true },
+    type: { String, default: 'boxed' }
   },
   computed: {
     p () {

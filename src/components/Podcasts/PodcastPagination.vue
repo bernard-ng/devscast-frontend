@@ -11,7 +11,7 @@
 export default {
   name: 'PodcastPagination',
   props: {
-    lastId : {Number, required: true}
+    lastId: { Number, required: true }
   }
 }
 </script>

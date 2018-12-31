@@ -6,7 +6,6 @@
   <h2 class="title-default">We need your help</h2>
   <p class="section-description">Help us support the show! Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />  Vel modi rem laudantium, alias minus temporibus nihil reiciendis vero.</p>
 
-
   <div class="row mb-50">
     <div class="col-lg-3 col-sm-6 mb-20">
       <router-link to="#" class="btn btn-default btn-round btn-lg btn-block">U$ 5</router-link>

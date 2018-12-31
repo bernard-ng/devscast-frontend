@@ -1,38 +1,37 @@
 <template>
-  <div class="home">
-			<section id="#episodes" class="section-positive">
-				<div class="container">
-					<h2 class="title-default">Another Episodes</h2>
+<div class="home">
+  <section id="#episodes" class="section-positive">
+    <div class="container">
+      <h2 class="title-default">Another Episodes</h2>
 
-					<div class="row">
+      <div class="row">
 
-            <!-- ===== PODCAST CARD LIST ===== -->
-            <div v-if="podcasts" v-for="p in podcasts" :key="p.id" class="col-sm-6 mb-40">
-              <PodcastCard :podcast="p" type="boxed"></PodcastCard>
-            </div>
+        <!-- ===== PODCAST CARD LIST ===== -->
+        <div v-if="podcasts" v-for="p in podcasts" :key="p.id" class="col-sm-6 mb-40">
+          <PodcastCard :podcast="p" type="boxed"></PodcastCard>
+        </div>
 
-						<!-- ===== CHECK MORE ===== -->
-						<div v-if="podcasts"  class="col-sm-12 mb-50">
-							<router-link :to="{name: 'podcasts.index'}" class="btn btn-primary btn-block btn-lg">
-                View more episodes
-              </router-link>
-						</div>
-					</div>
+        <!-- ===== CHECK MORE ===== -->
+        <div v-if="podcasts"  class="col-sm-12 mb-50">
+          <router-link :to="{name: 'podcasts.index'}" class="btn btn-primary btn-block btn-lg">
+            View more episodes
+          </router-link>
+        </div>
+      </div>
 
-          <LoadingWidget v-if="loading"></LoadingWidget>
-				</div>
-			</section>
+      <LoadingWidget v-if="loading"></LoadingWidget>
+    </div>
+  </section>
 
-			<!-- ===== ABOUT US ===== -->
-			<AboutSection></AboutSection>
+  <!-- ===== ABOUT US ===== -->
+  <AboutSection></AboutSection>
 
-			<!-- ===== NEWSLETTER ===== -->
-      <NewsletterSection></NewsletterSection>
+  <!-- ===== NEWSLETTER ===== -->
+  <NewsletterSection></NewsletterSection>
 
-			<!-- ===== DONATE ===== -->
-			<DonateSection></DonateSection>
-
-  </div>
+  <!-- ===== DONATE ===== -->
+  <DonateSection></DonateSection>
+</div>
 </template>
 
 <script>

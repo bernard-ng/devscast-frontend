@@ -29,7 +29,6 @@
       </div>
     </div>
 
-
   </div>
 </section>
 </template>
@@ -45,14 +44,14 @@ export default {
           role: 'Founder / Web Developer',
           description: 'This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..',
           socials: [
-            { link: 'https://facebook.com/id', icon: 'fa fa-facebook' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-instagram' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-google-plus' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-soundcloud' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-pinterest' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-youtube' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-spotify' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-twitter' }
+            { link: 'https://facebook.com/id1', icon: 'fa fa-facebook' },
+            { link: 'https://facebook.com/id2', icon: 'fa fa-instagram' },
+            { link: 'https://facebook.com/id3', icon: 'fa fa-google-plus' },
+            { link: 'https://facebook.com/id4', icon: 'fa fa-soundcloud' },
+            { link: 'https://facebook.com/id5', icon: 'fa fa-pinterest' },
+            { link: 'https://facebook.com/id6', icon: 'fa fa-youtube' },
+            { link: 'https://facebook.com/id7', icon: 'fa fa-spotify' },
+            { link: 'https://facebook.com/id8', icon: 'fa fa-twitter' }
           ]
         },
         {
@@ -60,11 +59,11 @@ export default {
           role: 'Founder / Web Developer',
           description: 'This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..',
           socials: [
-            { link: 'https://facebook.com/id', icon: 'fa fa-facebook' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-instagram' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-google-plus' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-soundcloud' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-twitter' }
+            { link: 'https://facebook.com/id8', icon: 'fa fa-facebook' },
+            { link: 'https://facebook.com/id67', icon: 'fa fa-instagram' },
+            { link: 'https://facebook.com/id6', icon: 'fa fa-google-plus' },
+            { link: 'https://facebook.com/id5', icon: 'fa fa-soundcloud' },
+            { link: 'https://facebook.com/id4', icon: 'fa fa-twitter' }
           ]
         },
         {
@@ -72,10 +71,10 @@ export default {
           role: 'Founder / Web Developer',
           description: 'This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..',
           socials: [
-            { link: 'https://facebook.com/id', icon: 'fa fa-facebook' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-instagram' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-google-plus' },
-            { link: 'https://facebook.com/id', icon: 'fa fa-soundcloud' }
+            { link: 'https://facebook.com/id4', icon: 'fa fa-facebook' },
+            { link: 'https://facebook.com/id333', icon: 'fa fa-instagram' },
+            { link: 'https://facebook.com/id33', icon: 'fa fa-google-plus' },
+            { link: 'https://facebook.com/id3', icon: 'fa fa-soundcloud' }
           ]
         }
       ]
