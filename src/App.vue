@@ -1,16 +1,9 @@
 <template>
   <div id="app">
     <Header></Header>
-
-    <transition name="fade">
-      <PodcastHero v-if="podcast" :podcast="podcast"></PodcastHero>
-    </transition>
-
-    <main id="main" class="main">
-      <transition name="fade">
+      <transition name="fade" mode="out-in">
         <router-view/>
       </transition>
-    </main>
     <Footer></Footer>
   </div>
 </template>
@@ -18,7 +11,6 @@
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
-import PodcastHero from '@/components/Podcasts/PodcastHero.vue'
 
 export default {
   data () {
@@ -29,8 +21,7 @@ export default {
   },
   components: {
     Header,
-    Footer,
-    PodcastHero
+    Footer
   },
   created () {
     this.getLastPodcast()
