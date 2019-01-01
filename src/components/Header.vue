@@ -2,14 +2,14 @@
 <header class="header scrolling sticky" itemscope itemtype="http://schema.org/Organization">
   <div class="container">
     <h1 class="logo">
-      <router-link :to="{name: 'home'}">
+      <router-link :to="{name: 'home'}" exact>
         <span itemprop="logo"><strong>Dev</strong>cast</span>
       </router-link>
     </h1>
 
     <nav class="navigation">
       <ul class="menu">
-        <router-link :to="{name: 'home'}" tag="li" class="menuitem">
+        <router-link :to="{name: 'home'}" tag="li" class="menuitem" exact>
           <a>Home</a>
         </router-link>
 
@@ -17,11 +17,15 @@
           <a>Podcasts</a>
         </router-link>
 
-        <router-link :to="{name: 'about'}" tag="li" class="menuitem">
+        <router-link :to="{name: 'categories.index'}" tag="li" class="menuitem">
+          <a>Categories</a>
+        </router-link>
+
+        <router-link :to="{name: 'about'}" tag="li" class="menuitem" exact>
           <a>About</a>
         </router-link>
 
-        <router-link :to="{name: 'contact'}" tag="li" class="menuitem">
+        <router-link :to="{name: 'contact'}" tag="li" class="menuitem" exact>
           <a>Contact</a>
         </router-link>
       </ul>
