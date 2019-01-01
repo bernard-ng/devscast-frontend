@@ -11,7 +11,10 @@
         </li>
       </ol>
       <div class="page-header-content text-center">
-        <h2>{{ name }}</h2>
+        <h2 :class="(description)? 'mt-30' : ''">{{ name }}</h2>
+        <div v-if="description" class="mb-20">
+          <p>{{ description }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -23,7 +26,8 @@ export default {
   name: 'PageHeader',
   props: {
     name: { String, required: true },
-    routeName: { String, required: true }
+    route: { String, required: true },
+    description: { String }
   }
 }
 </script>
