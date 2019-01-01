@@ -1,45 +1,43 @@
 <template>
 <div class="posdcasts-index">
-  <section id="#episodes" class="section-positive">
-    <div class="container">
-      <h2 class="title-default">Episodes</h2>
-      <div class="row">
 
-        <!-- ===== LAST PODCAST ===== -->
-        <div class="col-sm-12 mb-40">
-          <PodcastCard :podcast="lastPodcast" type="full"></PodcastCard>
-        </div>
+  <PodcastHero :podcast="lastPodcast"></PodcastHero>
 
-        <!-- ===== PODCAST CARD LIST ===== -->
-        <div v-for="p in podcasts" :key="p.id" class="col-sm-12 mb-40">
-          <PodcastCard :podcast="p" type="full"></PodcastCard>
-        </div>
+  <main>
+    <section id="#episodes" class="section-positive">
+      <div class="container">
+        <h2 class="title-default">Episodes</h2>
+        <div class="row">
+          <div class="col-sm-12 mb-40">
+            <PodcastCard :podcast="lastPodcast" type="full"></PodcastCard>
+          </div>
 
-        <div class="col-sm-12 text-center mb-50">
-          <!-- ===== PAGINATION ===== -->
-          <PodcastPagination :lastId="lastId"></PodcastPagination>
+          <div v-for="p in podcasts" :key="p.id" class="col-sm-12 mb-40">
+            <PodcastCard :podcast="p" type="full"></PodcastCard>
+          </div>
+
+          <div class="col-sm-12 text-center mb-50">
+            <PodcastPagination :lastId="lastId"></PodcastPagination>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== DONATE ===== -->
-  <DonateSection></DonateSection>
+    </section>
+    <DonateSection></DonateSection>
+  </main>
 </div>
 </template>
 
 <script>
+import PodcastHero from '@/components/Podcasts/PodcastHero.vue'
 import PodcastCard from '@/components/Podcasts/PodcastCard.vue'
 import PodcastPagination from '@/components/Podcasts/PodcastPagination'
 import DonateSection from '@/components/Sections/DonateSection.vue'
 
 export default {
-  name: 'podcast.index',
+  name: 'podcast-index',
   data () {
     return {
       action: '',
-      lastPodcast: '',
-      lastId: '',
       podcasts: []
     }
   },
@@ -61,7 +59,8 @@ export default {
   components: {
     PodcastCard,
     DonateSection,
-    PodcastPagination
+    PodcastPagination,
+    PodcastHero
   }
 }
 </script>
