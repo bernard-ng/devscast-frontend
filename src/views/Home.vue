@@ -12,15 +12,12 @@
       <div class="container">
         <h2 class="title-default">Another Episodes</h2>
 
-        <div class="row">
-
-          <!-- ===== PODCAST CARD LIST ===== -->
-          <div v-if="podcasts" v-for="p in podcasts" :key="p.id" class="col-sm-6 mb-40">
+        <div v-if="podcasts" class="row">
+          <div v-for="p in podcasts" :key="p.id" class="col-sm-6 mb-40">
             <PodcastCard :podcast="p" type="boxed"></PodcastCard>
           </div>
 
-          <!-- ===== CHECK MORE ===== -->
-          <div v-if="podcasts"  class="col-sm-12 mb-50">
+          <div class="col-sm-12 mb-50">
             <router-link :to="{name: 'podcasts.index'}" class="btn btn-primary btn-block btn-lg">
               View more episodes
             </router-link>
@@ -53,20 +50,20 @@ export default {
       error: null,
       message: '',
       podcasts: null,
-      loading: false,
+      loading: false
     }
   },
   mounted () {
-    this.loading = true;
+    this.loading = true
     this.$http.get('home').then(r => {
-      this.loading = false;
+      this.loading = false
       this.podcasts = r.data.podcasts
       this.podcast = this.podcasts[0]
       this.message = r.data['api.action']
     })
   },
   computed: {
-    podcast : {
+    podcast: {
       get () {
         if (this.podcasts) {
           return this.podcasts[0]

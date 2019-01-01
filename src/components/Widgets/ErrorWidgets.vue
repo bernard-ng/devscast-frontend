@@ -16,8 +16,8 @@
 export default {
   name: 'ErrorWidget',
   props: {
-    error: {String, default: 'Oups Something went wrong'},
-    message: {String, default: ''}
+    error: { String, default: 'Oups Something went wrong' },
+    message: { String, default: '' }
   }
 }
 </script>

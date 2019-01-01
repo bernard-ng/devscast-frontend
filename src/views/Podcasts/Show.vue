@@ -74,10 +74,10 @@ import LastPodcastWidget from '@/components/Widgets/Sidebar/LastPodcastWidget.vu
 export default {
   name: 'podcast-show',
   data () {
-    return  {
+    return {
       action: '',
       podcast: null,
-      error: null,
+      error: null
     }
   },
   beforeRouteEnter (to, from, next) {
@@ -107,6 +107,6 @@ export default {
     PodcastComments,
     SearchWidget,
     LastPodcastWidget
-  },
+  }
 }
 </script>
