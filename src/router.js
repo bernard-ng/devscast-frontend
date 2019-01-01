@@ -31,6 +31,16 @@ export default new Router({
       component: () => import(/* webpackChunkName: "pod.show" */ './views/Podcasts/Show.vue')
     },
     {
+      path: '/categories',
+      name: 'categories.index',
+      component: Home
+    },
+    {
+      path: '/categories/:slug-:id',
+      name: 'categories.show',
+      component: Home
+    },
+    {
       path: '/contact',
       name: 'contact',
       component: () => import(/* webpackChunkname: "contact" */ './views/Contact.vue')

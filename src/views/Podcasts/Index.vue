@@ -34,7 +34,6 @@ import PodcastPagination from '@/components/Podcasts/PodcastPagination'
 import DonateSection from '@/components/Sections/DonateSection.vue'
 
 export default {
-
   name: 'podcast.index',
   data () {
     return {
@@ -53,16 +52,16 @@ export default {
       return this.podcasts[this.podcasts.length - 1].id
     }
   },
+  mounted () {
+    this.$http.get('podcasts').then(r => {
+      this.podcasts = r.data.podcasts
+      this.action = r.data['api.action']
+    })
+  },
   components: {
     PodcastCard,
     DonateSection,
     PodcastPagination
-  },
-  mounted () {
-    this.$http.get('http://localhost:8081/podcasts').then(r => {
-      this.podcasts = r.data.podcasts
-      this.action = r.data['api.action']
-    })
   }
 }
 </script>

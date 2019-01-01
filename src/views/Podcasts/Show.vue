@@ -1,30 +1,112 @@
 <template>
-  <div class="posdcasts-index">
-     <kbd>{{ podcast }}</kbd>
-  </div>
+<div class="posdcasts-show">
+  <PodcastHero :podcast="podcast"></PodcastHero>
+
+  <main class="main" id="main">
+    <div class="section-negative">
+      <div class="container">
+        <div class="row mt-70 mb-50">
+          <div class="col-md-8 mb-50">
+            <div class="page-content">
+              <figure>
+                <img src="http://localhost/photofills" :alt="podcast.name" :title="podcast.name" />
+              </figure>
+              <div>{{ podcast.description }}</div>
+
+              <PodcastGallery v-if="podcast.gallery"></PodcastGallery>
+            </div>
+
+            <hr/>
+            <PodcastSinglePagination :prev="podcast.previous" :next="podcast.next"></PodcastSinglePagination>
+            <hr/>
+
+            <PodcastComments v-if="podcast.comments" :comments="podcasts.comment"></PodcastComments>
+            <hr />
+
+            <!-- ===== FORM COMMENTS ===== -->
+            <form action="#" class="form-comment form-validate">
+              <fieldset class="row">
+                <legend class="col-md-12">Leave a comment</legend>
+                <div class="col-md-8 mb-20">
+                  <label for="name" class="label-control">Name*:</label>
+                  <input type="text" id="name" name="name" class="form-control" required />
+                </div>
+                <div class="col-md-8 mb-20">
+                  <label for="email" class="label-control">Email*:</label>
+                  <input type="email" id="email" name="email" class="form-control" required />
+                </div>
+                <div class="col-md-8 mb-20">
+                  <label for="website" class="label-control">Website:</label>
+                  <input type="text" id="website" name="website" class="form-control" />
+                </div>
+                <div class="col-md-12 mb-20">
+                  <label for="comment" class="label-control">Comment*:</label>
+                  <textarea name="comment" id="comment" rows="8" class="form-control" required></textarea>
+                </div>
+                <div class="col-md-5">
+                  <input type="submit" class="btn btn-lg btn-block btn-success" value="Send comment" />
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <aside class="col-md-4">
+            <div class="page-sidebar">
+              <SearchWidget></SearchWidget>
+              <LastPodcastWidget></LastPodcastWidget>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
 </template>
 
 <script>
+import PodcastHero from '@/components/Podcasts/PodcastHero.vue'
+import PodcastGallery from '@/components/Podcasts/PodcastGallery.vue'
+import PodcastSinglePagination from '@/components/Podcasts/PodcastSinglePagination.vue'
+import PodcastComments from '@/components/Podcasts/PodcastComments.vue'
+import SearchWidget from '@/components/Widgets/Sidebar/SearchWidget.vue'
+import LastPodcastWidget from '@/components/Widgets/Sidebar/LastPodcastWidget.vue'
+
 export default {
   name: 'podcast-show',
   data () {
     return  {
       action: '',
-      loading: false,
+      podcast: null,
       error: null,
-      podcast: null
     }
   },
-  created () {
-    let id = this.$route.params.id
-    let slug = this.$route.params.slug
-    this.loading = true
-
-    this.$http.get(`http://localhost:8081/podcasts/${slug}-${id}`).then(r => {
-      this.podcast = r.data.podcast
-      this.action = r.data['api.action']
-      this.loading = false
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.$http.get(`podcasts/${to.params.slug}-${to.params.id}`).then(r => {
+        vm.setData(r.data)
+      })
     })
-  }
+  },
+  beforeRouteUpdate (to, from, next) {
+    this.podcast = null
+    this.$http.get(`podcasts/${to.params.slug}-${to.params.id}`).then(r => {
+      this.action = r.data.action
+      this.podcast = r.data.podcast
+    })
+  },
+  methods: {
+    setData (data) {
+      this.action = data.action
+      this.podcast = data.podcast
+    }
+  },
+  components: {
+    PodcastHero,
+    PodcastGallery,
+    PodcastSinglePagination,
+    PodcastComments,
+    SearchWidget,
+    LastPodcastWidget
+  },
 }
 </script>

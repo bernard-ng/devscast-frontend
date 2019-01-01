@@ -1,5 +1,5 @@
 <template>
-<section class="podcast-hero" style="height: 80vh">
+<section v-if="podcast" class="podcast-hero" style="height: 80vh">
   <div class="podcast-hero-inner">
     <div class="container">
       <div class="podcast-hero-content">

@@ -1,40 +1,45 @@
 <template>
 <div class="home">
-  <section id="#episodes" class="section-positive">
-    <div class="container">
-      <h2 class="title-default">Another Episodes</h2>
 
-      <div class="row">
+  <transition name="fade">
+    <keep-alive>
+      <PodcastHero v-if="podcast" :podcast="podcast"></PodcastHero>
+    </keep-alive>
+  </transition>
 
-        <!-- ===== PODCAST CARD LIST ===== -->
-        <div v-if="podcasts" v-for="p in podcasts" :key="p.id" class="col-sm-6 mb-40">
-          <PodcastCard :podcast="p" type="boxed"></PodcastCard>
+  <main id="main" class="main">
+    <section id="#episodes" class="section-positive">
+      <div class="container">
+        <h2 class="title-default">Another Episodes</h2>
+
+        <div class="row">
+
+          <!-- ===== PODCAST CARD LIST ===== -->
+          <div v-if="podcasts" v-for="p in podcasts" :key="p.id" class="col-sm-6 mb-40">
+            <PodcastCard :podcast="p" type="boxed"></PodcastCard>
+          </div>
+
+          <!-- ===== CHECK MORE ===== -->
+          <div v-if="podcasts"  class="col-sm-12 mb-50">
+            <router-link :to="{name: 'podcasts.index'}" class="btn btn-primary btn-block btn-lg">
+              View more episodes
+            </router-link>
+          </div>
         </div>
 
-        <!-- ===== CHECK MORE ===== -->
-        <div v-if="podcasts"  class="col-sm-12 mb-50">
-          <router-link :to="{name: 'podcasts.index'}" class="btn btn-primary btn-block btn-lg">
-            View more episodes
-          </router-link>
-        </div>
+        <LoadingWidget v-if="loading"></LoadingWidget>
       </div>
+    </section>
 
-      <LoadingWidget v-if="loading"></LoadingWidget>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT US ===== -->
-  <AboutSection></AboutSection>
-
-  <!-- ===== NEWSLETTER ===== -->
-  <NewsletterSection></NewsletterSection>
-
-  <!-- ===== DONATE ===== -->
-  <DonateSection></DonateSection>
+    <AboutSection></AboutSection>
+    <NewsletterSection></NewsletterSection>
+    <DonateSection></DonateSection>
+  </main>
 </div>
 </template>
 
 <script>
+import PodcastHero from '@/components/Podcasts/PodcastHero.vue'
 import PodcastCard from '@/components/Podcasts/PodcastCard.vue'
 import DonateSection from '@/components/Sections/DonateSection.vue'
 import NewsletterSection from '@/components/Sections/NewsletterSection.vue'
@@ -51,21 +56,36 @@ export default {
       loading: false,
     }
   },
+  mounted () {
+    this.loading = true;
+    this.$http.get('home').then(r => {
+      this.loading = false;
+      this.podcasts = r.data.podcasts
+      this.podcast = this.podcasts[0]
+      this.message = r.data['api.action']
+    })
+  },
+  computed: {
+    podcast : {
+      get () {
+        if (this.podcasts) {
+          return this.podcasts[0]
+        } else {
+          return []
+        }
+      },
+      set (value) {
+        return value
+      }
+    }
+  },
   components: {
     PodcastCard,
     DonateSection,
     NewsletterSection,
     AboutSection,
-    LoadingWidget
-  },
-  mounted () {
-    this.loading = true;
-    this.$http.get('http://localhost:8081/home').then(
-      r => {
-      this.loading = false;
-      this.podcasts = r.data.podcasts
-      this.message = r.data['api.action']
-    })
+    LoadingWidget,
+    PodcastHero
   }
 }
 </script>
