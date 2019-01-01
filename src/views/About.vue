@@ -19,16 +19,16 @@ import DonateSection from '@/components/Sections/DonateSection.vue'
 
 export default {
   name: 'About',
+  computed: {
+    routeName () {
+      return this.$route.name
+    }
+  },
   components: {
     PageHeader,
     AboutSection,
     NewsletterSection,
     DonateSection
-  },
-  computed: {
-    routeName () {
-      return this.$route.name
-    }
   }
 }
 </script>
