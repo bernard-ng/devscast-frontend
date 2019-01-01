@@ -1,23 +1,75 @@
 <template>
-  <div class="posdcasts-show">
+<div class="posdcasts-show">
+  <PodcastHero :podcast="podcast"></PodcastHero>
 
-    <PodcastHero :podcast="podcast"></PodcastHero>
+  <main class="main" id="main">
+    <div class="section-negative">
+      <div class="container">
+        <div class="row mt-70 mb-50">
+          <div class="col-md-8 mb-50">
+            <div class="page-content">
+              <figure>
+                <img src="http://localhost/photofills" :alt="podcast.name" :title="podcast.name" />
+              </figure>
+              <div>{{ podcast.description }}</div>
 
-    <main class="main" id="main">
-      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolore ipsa consectetur tenetur fuga. Beatae accusantium laboriosam inventore mollitia quis fuga sapiente quia, perferendis corporis exercitationem, natus minima itaque ea?</div>
-      <div>Voluptate, harum quod consequatur vitae iste et assumenda asperiores inventore recusandae ad laboriosam sint cumque temporibus ducimus quas labore similique nemo. Culpa nobis, temporibus minima aperiam eos tempora obcaecati. Culpa.</div>
-      <div>Molestiae ad eum nemo enim cum eos aut fugit eveniet laborum ullam? Adipisci, veritatis modi maxime harum iure quisquam quas illum porro necessitatibus excepturi sunt consequatur eum fugit aliquam. Id.</div>
-      <div>Id ipsa quidem numquam delectus illum iure aut rem repellat dolorem quod, consequatur unde suscipit nesciunt, eius doloremque nihil voluptatem? Aperiam aut molestiae commodi, qui optio quae quas nemo fugiat.</div>
-      <div>Aliquam aperiam iusto reiciendis, autem perspiciatis ab nam id similique fugiat beatae nihil hic natus suscipit? Neque consequatur, veniam facilis, commodi autem sed illo officia eaque corrupti porro, expedita et!</div>
-      <div>Perspiciatis eius reiciendis, itaque laboriosam facilis voluptatem, at magnam accusamus unde facere beatae inventore nostrum minima, ducimus alias veniam quidem? A numquam, aliquam beatae officiis obcaecati quo reiciendis dolores quisquam.</div>
-      <div>Pariatur culpa impedit asperiores odio voluptatem repellendus, distinctio debitis non veritatis enim voluptas eveniet possimus, labore modi tempore assumenda, deserunt at cumque aliquam quisquam minus quod! Tenetur reiciendis deserunt corrupti?</div>
-      <div>Rerum et est pariatur temporibus perferendis aperiam, eveniet quos soluta! Velit ex error molestias, amet voluptatibus aspernatur autem incidunt provident, commodi aliquam minima nam tempore ipsa at hic maxime quaerat!</div>
-    </main>
-  </div>
+              <PodcastGallery v-if="podcast.gallery"></PodcastGallery>
+            </div>
+
+            <hr/>
+            <PodcastSinglePagination :prev="podcast.previous" :next="podcast.next"></PodcastSinglePagination>
+            <hr/>
+
+            <PodcastComments v-if="podcast.comments" :comments="podcasts.comment"></PodcastComments>
+            <hr />
+
+            <!-- ===== FORM COMMENTS ===== -->
+            <form action="#" class="form-comment form-validate">
+              <fieldset class="row">
+                <legend class="col-md-12">Leave a comment</legend>
+                <div class="col-md-8 mb-20">
+                  <label for="name" class="label-control">Name*:</label>
+                  <input type="text" id="name" name="name" class="form-control" required />
+                </div>
+                <div class="col-md-8 mb-20">
+                  <label for="email" class="label-control">Email*:</label>
+                  <input type="email" id="email" name="email" class="form-control" required />
+                </div>
+                <div class="col-md-8 mb-20">
+                  <label for="website" class="label-control">Website:</label>
+                  <input type="text" id="website" name="website" class="form-control" />
+                </div>
+                <div class="col-md-12 mb-20">
+                  <label for="comment" class="label-control">Comment*:</label>
+                  <textarea name="comment" id="comment" rows="8" class="form-control" required></textarea>
+                </div>
+                <div class="col-md-5">
+                  <input type="submit" class="btn btn-lg btn-block btn-success" value="Send comment" />
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <aside class="col-md-4">
+            <div class="page-sidebar">
+              <SearchWidget></SearchWidget>
+              <LastPodcastWidget></LastPodcastWidget>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
 </template>
 
 <script>
 import PodcastHero from '@/components/Podcasts/PodcastHero.vue'
+import PodcastGallery from '@/components/Podcasts/PodcastGallery.vue'
+import PodcastSinglePagination from '@/components/Podcasts/PodcastSinglePagination.vue'
+import PodcastComments from '@/components/Podcasts/PodcastComments.vue'
+import SearchWidget from '@/components/Widgets/Sidebar/SearchWidget.vue'
+import LastPodcastWidget from '@/components/Widgets/Sidebar/LastPodcastWidget.vue'
 
 export default {
   name: 'podcast-show',
@@ -49,7 +101,12 @@ export default {
     }
   },
   components: {
-    PodcastHero
+    PodcastHero,
+    PodcastGallery,
+    PodcastSinglePagination,
+    PodcastComments,
+    SearchWidget,
+    LastPodcastWidget
   },
 }
 </script>
