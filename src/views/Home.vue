@@ -60,7 +60,7 @@ export default {
   },
   mounted () {
     this.loading = true;
-    this.$http.get('http://localhost:8081/home').then(
+    this.$http.get('home').then(
       r => {
       this.loading = false;
       this.podcasts = r.data.podcasts

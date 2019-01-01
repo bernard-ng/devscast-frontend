@@ -20,7 +20,7 @@ export default {
     let slug = this.$route.params.slug
     this.loading = true
 
-    this.$http.get(`http://localhost:8081/podcasts/${slug}-${id}`).then(r => {
+    this.$http.get(`podcasts/${slug}-${id}`).then(r => {
       this.podcast = r.data.podcast
       this.action = r.data['api.action']
       this.loading = false

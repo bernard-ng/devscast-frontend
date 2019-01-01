@@ -59,7 +59,7 @@ export default {
     PodcastPagination
   },
   mounted () {
-    this.$http.get('http://localhost:8081/podcasts').then(r => {
+    this.$http.get('podcasts').then(r => {
       this.podcasts = r.data.podcasts
       this.action = r.data['api.action']
     })
