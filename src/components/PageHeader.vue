@@ -7,7 +7,7 @@
           <router-link :to="{name: 'home'}">Home</router-link>
         </li>
         <li itemprop="itemListElement">
-          <router-link :to="{name: routeName}">{{ name }}</router-link>
+          <router-link :to="{name: (route)? route : $route.name}">{{ name }}</router-link>
         </li>
       </ol>
       <div class="page-header-content text-center">
@@ -26,7 +26,7 @@ export default {
   name: 'PageHeader',
   props: {
     name: { String, required: true },
-    route: { String, required: true },
+    route: { String, default: 'home' },
     description: { String }
   }
 }
