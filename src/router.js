@@ -36,7 +36,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/categories/:slug-:id',
+      path: '/categories/:id',
       name: 'categories.show',
       component: Home
     },
