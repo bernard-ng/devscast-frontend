@@ -4,14 +4,10 @@
   <PodcastHero :podcast="lastPodcast"></PodcastHero>
 
   <main>
-    <section id="#episodes" class="section-positive">
+    <section id="#episodes" class="section-positive transition">
       <div class="container">
         <h2 class="title-default">Episodes</h2>
-        <div class="row">
-          <div class="col-sm-12 mb-40">
-            <PodcastCard :podcast="lastPodcast" type="full"></PodcastCard>
-          </div>
-
+        <div v-if="podcasts && !loading" class="row">
           <div v-for="p in podcasts" :key="p.id" class="col-sm-12 mb-40">
             <PodcastCard :podcast="p" type="full"></PodcastCard>
           </div>
@@ -21,6 +17,8 @@
           </div>
         </div>
       </div>
+
+      <LoadingWidget v-if="loading"></LoadingWidget>
     </section>
     <DonateSection></DonateSection>
   </main>
@@ -31,6 +29,7 @@
 import PodcastHero from '@/components/Podcasts/PodcastHero.vue'
 import PodcastCard from '@/components/Podcasts/PodcastCard.vue'
 import PodcastPagination from '@/components/Podcasts/PodcastPagination'
+import LoadingWidget from '@/components/Widgets/LoadingWidget.vue'
 import DonateSection from '@/components/Sections/DonateSection.vue'
 
 export default {
@@ -38,20 +37,27 @@ export default {
   data () {
     return {
       action: '',
+      loading: true,
       podcasts: []
     }
   },
   computed: {
-    lastPodcast () {
-      return (typeof this.podcasts[0] === 'undefined') ? {} : this.podcasts[0]
+    lastPodcast: {
+      get () {
+        return (this.podcasts[0])? this.podcasts[0] : {};
+      },
+      set (value) {
+        return value
+      }
     },
-
     lastId () {
-      return this.podcasts[this.podcasts.length - 1].id
+      return 1;
     }
   },
   mounted () {
+    this.loading = false
     this.$http.get('podcasts').then(r => {
+      this.loading = false
       this.podcasts = r.data.podcasts
       this.action = r.data['api.action']
     })
@@ -60,6 +66,7 @@ export default {
     PodcastCard,
     DonateSection,
     PodcastPagination,
+    LoadingWidget,
     PodcastHero
   }
 }

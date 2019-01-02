@@ -8,7 +8,7 @@
   </transition>
 
   <main id="main" class="main">
-    <section id="#episodes" class="section-positive">
+    <section id="#episodes" class="section-positive transition">
       <div class="container">
         <h2 class="title-default">Another Episodes</h2>
 
@@ -23,9 +23,9 @@
             </router-link>
           </div>
         </div>
-
-        <LoadingWidget v-if="loading"></LoadingWidget>
       </div>
+
+      <LoadingWidget v-if="loading"></LoadingWidget>
     </section>
 
     <AboutSection></AboutSection>
