@@ -6,13 +6,13 @@
       <span class="podcast-hero-date">{{ podcast.created_at }}</span>
       <h2 class="podcast-hero-title">
         <router-link :to="{name: 'podcasts.show', params:{id: podcast.id, slug: podcast.slug}}">
-          {{ podcast.name | truncate(30) }}
+          {{ (podcast.name)? podcast.name : '' | truncate(30) }}
         </router-link>
       </h2>
-      <p>{{ podcast.description | truncate(150) }}</p>
+      <p>{{ (podcast.description)? podcast.description : '' | truncate(150)  }}</p>
       <ul class="podcast-hero-meta">
         <li class="item">
-          <router-link :to="{name: 'categories.show', params:{name: podcast.category}}" class="podcast-hero-tag" rel="tag">
+          <router-link :to="{name: 'categories.show', params:{id: podcast.categories_id}}" class="podcast-hero-tag" rel="tag">
             {{ podcast.category }}
           </router-link>
         </li>

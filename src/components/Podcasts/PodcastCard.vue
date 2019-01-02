@@ -9,12 +9,12 @@
       <span class="podcast-date">{{ p.created_at }}</span>
       <h2 class="podcast-title">
         <router-link :to="{name: 'podcasts.show', params:{id: p.id, slug: p.slug}}">
-          {{ p.name | truncate(40) }}
+          {{ (p.name)? p.name : '' | truncate(40) }}
         </router-link>
       </h2>
       <p class="podcast-excerpt">
         <router-link :to="{name: 'podcasts.show', params:{id: p.id, slug: p.slug}}">
-          {{ p.description | truncate(100) }}
+          {{ (p.description)? p.name : '' | truncate(100) }}
         </router-link>
       </p>
       <ul class="podcast-meta">
