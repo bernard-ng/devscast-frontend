@@ -1,6 +1,16 @@
 <template>
 <div class="posdcasts-show">
-  <PodcastHero :podcast="podcast"></PodcastHero>
+  <PodcastHero :podcast="podcast" :background="podcast.thumb"></PodcastHero>
+  <div class="podcast-meta-element">
+    <span class="podcast-meta-item"><i class="fa fa-calendar"></i> {{ podcast.created_at }}</span>
+    <span class="podcast-meta-item"><i class="fa fa-clock-o"></i> {{ podcast.duration }} minutes</span>
+    <router-link class="podcast-meta-item" :to="{name: 'categories.show', params: {id: podcast.categories_id}}">
+      <i class="fa fa-tag"></i> {{ podcast.category }}
+    </router-link>
+    <a class="podcast-meta-item" :href="podcast.audio"><i class="fa fa-download"></i> Download (MP3)</a>
+  </div>
+
+  <PodcastLinks :podcast="podcast.links"></PodcastLinks>
 
   <main class="main" id="main">
     <div class="section-negative">
@@ -65,6 +75,7 @@
 
 <script>
 import PodcastHero from '@/components/Podcasts/PodcastHero.vue'
+import PodcastLinks from '@/components/Podcasts/PodcastLinks.vue'
 import PodcastGallery from '@/components/Podcasts/PodcastGallery.vue'
 import PodcastSinglePagination from '@/components/Podcasts/PodcastSinglePagination.vue'
 import PodcastComments from '@/components/Podcasts/PodcastComments.vue'
@@ -102,6 +113,7 @@ export default {
   },
   components: {
     PodcastHero,
+    PodcastLinks,
     PodcastGallery,
     PodcastSinglePagination,
     PodcastComments,
