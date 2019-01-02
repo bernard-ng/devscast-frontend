@@ -1,5 +1,5 @@
 <template>
-<section v-if="podcast" class="podcast-hero" style="height: 80vh">
+<section v-if="podcast" class="podcast-hero" style="height: 80vh" :style="bg()">
   <div class="podcast-hero-inner">
     <div class="container">
       <div class="podcast-hero-content">
@@ -37,7 +37,15 @@ import PodcastPlayer from '@/components/Podcasts/PodcastPlayer.vue'
 export default {
   name: 'PodcastHero',
   props: {
-    podcast: { Object, required: true }
+    podcast: { Object, required: true },
+    background: { String, default: null }
+  },
+  methods: {
+    bg () {
+      if (this.background) {
+        return `background-image: url('${this.background}');`
+      }
+    }
   },
   components: {
     PodcastPlayer
