@@ -1,5 +1,5 @@
 <template>
-  <div class="podcast-card" :class="type">
+  <div v-if="podcast" class="podcast-card" :class="type">
     <figure class="podcast-image">
       <router-link :to="{name: 'podcasts.show', params:{id: p.id, slug: p.slug}}">
         <img :src="p.thumb" :alt="p.name" :title="p.name" />
@@ -19,7 +19,7 @@
       </p>
       <ul class="podcast-meta">
         <li class="item">
-          <router-link :to="{name: 'categories.show', params:{name: p.category}}" class="podcast-tag" rel="tag">
+          <router-link :to="{name: 'categories.show', params:{id: p.categories_id}}" class="podcast-tag" rel="tag">
             {{ p.category }}
           </router-link>
         </li>
