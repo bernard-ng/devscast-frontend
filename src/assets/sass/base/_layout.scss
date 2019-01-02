@@ -241,7 +241,7 @@
 }
 
 .page-error {
-  height: 700px;
+  height: 500px;
 }
 
 .page-error .page-error-inner {
@@ -262,13 +262,9 @@
   top: 50%;
   left: 0;
   width: 100%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
+  transform: translateY(100%);
 }
 
 .page-error h2 {
-  margin-top: 0;
+  margin-top: 10px;
 }
