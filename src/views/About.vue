@@ -1,7 +1,7 @@
 <template>
 <div class="about">
 
-  <PageHeader name="About Us" :route="routeName"></PageHeader>
+  <PageHeader name="About Us"></PageHeader>
 
   <main class="main" id="main">
     <AboutSection></AboutSection>
@@ -19,11 +19,6 @@ import DonateSection from '@/components/Sections/DonateSection.vue'
 
 export default {
   name: 'About',
-  computed: {
-    routeName () {
-      return this.$route.name
-    }
-  },
   components: {
     PageHeader,
     AboutSection,

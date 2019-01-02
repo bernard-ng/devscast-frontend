@@ -1,7 +1,7 @@
 <template>
 <div class="contact">
 
-  <PageHeader name="Contact Us" :route="routeName"></PageHeader>
+  <PageHeader name="Contact Us"></PageHeader>
 
   <main class="main" id="main">
     <section class="section-negative">
@@ -72,11 +72,6 @@ import DonateSection from '@/components/Sections/DonateSection.vue'
 
 export default {
   name: 'Contact',
-  computed: {
-    routeName () {
-      return this.$route.name
-    }
-  },
   components: {
     PageHeader,
     DonateSection
