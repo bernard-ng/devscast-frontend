@@ -1,5 +1,5 @@
 <template>
-<div class="posdcasts-show">
+<div v-if="podcast" class="posdcasts-show">
   <PodcastHero :podcast="podcast" :background="podcast.thumb"></PodcastHero>
   <div class="podcast-meta-element">
     <span class="podcast-meta-item"><i class="fa fa-calendar"></i> {{ podcast.created_at }}</span>
