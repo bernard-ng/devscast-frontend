@@ -2,6 +2,10 @@
 
 @import "./variables";
 
+.transition {
+  transition: all 0.3s linear !important;
+}
+
 .inline-block {
   display: -moz-inline-stack;
   display: inline-block;
