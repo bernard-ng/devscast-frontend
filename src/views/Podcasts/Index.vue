@@ -44,14 +44,14 @@ export default {
   computed: {
     lastPodcast: {
       get () {
-        return (this.podcasts[0])? this.podcasts[0] : {};
+        return (this.podcasts[0]) ? this.podcasts[0] : {}
       },
       set (value) {
         return value
       }
     },
     lastId () {
-      return 1;
+      return 1
     }
   },
   mounted () {
