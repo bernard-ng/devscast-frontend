@@ -1,4 +1,4 @@
-# vote-machine-app
+# Frontend (vue)
 
 ## Project setup
 ```
